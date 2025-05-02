@@ -1,7 +1,7 @@
 import React from 'react'
 import '../Components/styles.css'
 
-const MovieCard = ({movie}) => {
+const MovieCard = ({movie, isWatchlisted, toggleWatchlist}) => {
 
     const handleError =(e) =>{
         e.target.src = "images/default.jpg"
@@ -19,7 +19,10 @@ const MovieCard = ({movie}) => {
 
     return (
         <div key={movie.id} className='movie-card'>
-            <img src={`images/${movie.image}`} alt={movie.title} onError={handleError} />
+            <img src={`images/${movie.image}`} 
+            alt={movie.title} 
+            onError={handleError} />
+            
             <div className='movie-card-info'>
                 {movie.title}
                 <h3 className='movie-card-title'>{movie.title}</h3>
